@@ -1,0 +1,49 @@
+{
+   "abstract" : "Catmandu fix modules for parsing dates",
+   "author" : [
+      "nicolas.franck@ugent.be"
+   ],
+   "dynamic_config" : 1,
+   "generated_by" : "Module::Build version 0.4203",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "catmandu-fix-date",
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0.42"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Catmandu" : "0",
+            "DateTime" : "0",
+            "DateTime::Format::Strptime" : "0",
+            "DateTime::TimeZone" : "0",
+            "Moo" : "0",
+            "Time::HiRes" : "0",
+            "perl" : ">=5.10.0"
+         }
+      }
+   },
+   "provides" : {
+      "Catmandu::Fix::datetime_format" : {
+         "file" : "lib/Catmandu/Fix/datetime_format.pm"
+      },
+      "Catmandu::Fix::timestamp" : {
+         "file" : "lib/Catmandu/Fix/timestamp.pm"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "license" : [
+         "http://dev.perl.org/licenses/"
+      ]
+   },
+   "version" : "0.01"
+}
