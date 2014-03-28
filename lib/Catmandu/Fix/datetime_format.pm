@@ -118,6 +118,10 @@ sub emit {
 
   datetime_format('timestamp','source_pattern' => '%s','destination_pattern' => '%Y-%m-%d','time_zone' => 'UTC','set_time_zone' => 'Europe/Brussels')
 
+=head1 AUTHOR
+
+Nicolas Franck, C<< <nicolas.franck at ugent.be> >>
+
 =head1 SEE ALSO
 
 L<Catmandu::Fix>

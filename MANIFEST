@@ -1,7 +1,9 @@
 Build.PL
+lib/Catmandu/Fix/Date.pm
 lib/Catmandu/Fix/datetime_format.pm
 lib/Catmandu/Fix/timestamp.pm
 LICENSE
 MANIFEST			This list of files
 META.json
 META.yml
+Makefile.PL

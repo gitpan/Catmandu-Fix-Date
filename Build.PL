@@ -3,7 +3,7 @@ use strict;
 use Module::Build;
 
 my $requires = {
-  perl => '>=5.10.0',
+  perl => '5.10.1',
   Catmandu => 0,  
   'Moo' => 0,
   'DateTime' => 0,
@@ -14,8 +14,8 @@ my $requires = {
 my $recommends = {};
 
 my $build = Module::Build->new(
-  module_name => 'catmandu-fix-date',
-  dist_version => '0.01',
+  module_name => 'Catmandu-Fix-Date',
+  dist_version_from => 'lib/Catmandu/Fix/Date.pm',  
   dist_author => [qw(
     nicolas.franck@ugent.be
   )],
@@ -23,6 +23,7 @@ my $build = Module::Build->new(
   requires => $requires,
   recommends => $recommends,
   license => 'perl',
-  create_license => 1
+  create_license => 1,
+  create_makefile_pl => 'traditional'
 );
 $build->create_build_script();

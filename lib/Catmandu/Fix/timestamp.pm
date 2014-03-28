@@ -41,6 +41,10 @@ sub emit {
   #set the key 'timestamp' to the current time (unix timestamp)
   timestamp('timestamp')
 
+=head1 AUTHOR
+
+Nicolas Franck, C<< <nicolas.franck at ugent.be> >>
+
 =head1 SEE ALSO
 
 L<Catmandu::Fix>

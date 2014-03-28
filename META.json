@@ -12,7 +12,7 @@
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
-   "name" : "catmandu-fix-date",
+   "name" : "Catmandu-Fix-Date",
    "prereqs" : {
       "configure" : {
          "requires" : {
@@ -27,11 +27,15 @@
             "DateTime::TimeZone" : "0",
             "Moo" : "0",
             "Time::HiRes" : "0",
-            "perl" : ">=5.10.0"
+            "perl" : "v5.10.1"
          }
       }
    },
    "provides" : {
+      "Catmandu::Fix::Date" : {
+         "file" : "lib/Catmandu/Fix/Date.pm",
+         "version" : "0.011"
+      },
       "Catmandu::Fix::datetime_format" : {
          "file" : "lib/Catmandu/Fix/datetime_format.pm"
       },
@@ -45,5 +49,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.01"
+   "version" : "0.011"
 }
