@@ -15,7 +15,7 @@ name: Catmandu-Fix-Date
 provides:
   Catmandu::Fix::Date:
     file: lib/Catmandu/Fix/Date.pm
-    version: 0.011
+    version: 0.012
   Catmandu::Fix::datetime_format:
     file: lib/Catmandu/Fix/datetime_format.pm
   Catmandu::Fix::timestamp:
@@ -30,4 +30,4 @@ requires:
   perl: v5.10.1
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.011
+version: 0.012
