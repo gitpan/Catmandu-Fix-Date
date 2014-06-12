@@ -1,5 +1,5 @@
 package Catmandu::Fix::Date;
-our $VERSION = "0.012";
+our $VERSION = "0.0121";
 
 =head1 NAME
 
@@ -8,6 +8,13 @@ our $VERSION = "0.012";
 =head1 AUTHOR
 
 Nicolas Franck, C<< <nicolas.franck at ugent.be> >>
+
+=head1 SYNOPSIS
+
+  For documentation on these fixes see:
+
+    L<Catmandu::Fix::datetime_format>
+    L<Catmandu::Fix::timestamp>
 
 =head1 SEE ALSO
 

@@ -3,6 +3,10 @@ use Catmandu::Sane;
 use Time::HiRes;
 use Moo;
 
+our $VERSION = "0.0121";
+
+with 'Catmandu::Fix::Base';
+
 has field => (
   is => 'ro' , 
   required => 1
@@ -34,7 +38,7 @@ sub emit {
 
 =head1 NAME
 
-  Catmandu::Fix::timestamp
+  Catmandu::Fix::timestamp - Catmandu fix that stores the current unix time, in high resolution
 
 =head1 SYNOPSIS
 

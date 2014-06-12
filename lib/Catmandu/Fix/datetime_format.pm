@@ -6,6 +6,10 @@ use DateTime::Format::Strptime;
 use DateTime::TimeZone;
 use DateTime;
 
+our $VERSION = "0.0121";
+
+with 'Catmandu::Fix::Base';
+
 has source => (
   is => 'ro' , 
   required => 1
@@ -130,7 +134,7 @@ sub emit {
 
 =head1 NAME
 
-  Catmandu::Fix::datetime_format
+  Catmandu::Fix::datetime_format - Catmandu Fix for converting between datetime formats
 
 =head1 SYNOPSIS
 

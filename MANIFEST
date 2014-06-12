@@ -3,7 +3,10 @@ lib/Catmandu/Fix/Date.pm
 lib/Catmandu/Fix/datetime_format.pm
 lib/Catmandu/Fix/timestamp.pm
 LICENSE
+Makefile.PL
 MANIFEST			This list of files
 META.json
 META.yml
-Makefile.PL
+t/00-load.t
+t/01-datetime_format.t
+test/test.pl

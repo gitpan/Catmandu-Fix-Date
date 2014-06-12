@@ -34,13 +34,15 @@
    "provides" : {
       "Catmandu::Fix::Date" : {
          "file" : "lib/Catmandu/Fix/Date.pm",
-         "version" : "0.012"
+         "version" : "0.0121"
       },
       "Catmandu::Fix::datetime_format" : {
-         "file" : "lib/Catmandu/Fix/datetime_format.pm"
+         "file" : "lib/Catmandu/Fix/datetime_format.pm",
+         "version" : "0.0121"
       },
       "Catmandu::Fix::timestamp" : {
-         "file" : "lib/Catmandu/Fix/timestamp.pm"
+         "file" : "lib/Catmandu/Fix/timestamp.pm",
+         "version" : "0.0121"
       }
    },
    "release_status" : "stable",
@@ -49,5 +51,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.012"
+   "version" : "0.0121"
 }
