@@ -1,0 +1,9 @@
+0.0122	2014-11-13
+	- start_day
+	- end_day
+	- start_week
+	- end_week
+	- start_year
+	- end_year
+	- fix Catmandu::Fix::timestamp - key not created if not exists already (emit_create_path necessary)
+	- fix Catmandu::Fix::datetime_format -  set default time_zone and set_time_zone to UTC instead of "local" (which delivers other results depending on the time zone)

@@ -6,12 +6,12 @@ use DateTime::Format::Strptime;
 use DateTime::TimeZone;
 use DateTime;
 
-our $VERSION = "0.0121";
+our $VERSION = "0.0122";
 
 with 'Catmandu::Fix::Base';
 
 has source => (
-  is => 'ro' , 
+  is => 'ro' ,
   required => 1
 );
 has locale => (
@@ -33,7 +33,7 @@ has time_zone => (
     check_string($_[0]);
   },
   default => sub {
-    "local"
+    "UTC"
   }
 );
 has set_time_zone => (
@@ -43,7 +43,7 @@ has set_time_zone => (
     check_string($_[0]);
   },
   default => sub {
-    "local"
+    "UTC"
   }
 );
 
@@ -73,7 +73,7 @@ has _datetime_parser => (
   default => sub {
     my $self = $_[0];
     DateTime::Format::Strptime->new(
-      pattern => $self->source_pattern, 
+      pattern => $self->source_pattern,
       locale => $self->locale,
       time_zone => $self->time_zone,
       on_error => 'undef'
@@ -92,11 +92,11 @@ around BUILDARGS => sub {
 sub emit {
   my($self,$fixer) = @_;
 
-  my $perl = "";  
+  my $perl = "";
 
   my $source = $fixer->split_path($self->source());
   my $key = pop @$source;
-  
+
   my $set_time_zone = $fixer->generate_var();
   $perl .= $fixer->emit_declare_vars($set_time_zone,$fixer->emit_string($self->set_time_zone()));
 
@@ -112,10 +112,10 @@ sub emit {
       my $d = $fixer->generate_var();
 
       my $p =   $fixer->emit_declare_vars($d);
-      $p .=   " $d = ".${parser}."->parse_datetime($var);";  
-      $p .=   " if($d){";    
+      $p .=   " $d = ".${parser}."->parse_datetime($var);";
+      $p .=   " if($d){";
       $p .=   "   $d->set_time_zone(${set_time_zone});";
-      $p .=   "   ${var} = DateTime::Format::Strptime::strftime('".$self->destination_pattern()."',$d);";          
+      $p .=   "   ${var} = DateTime::Format::Strptime::strftime('".$self->destination_pattern()."',$d);";
       $p .=   " }";
       if($self->delete){
         $p .= " else { ".$fixer->emit_delete_key($pvar,$key)." }";

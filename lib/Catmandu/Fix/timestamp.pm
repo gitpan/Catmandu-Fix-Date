@@ -2,38 +2,27 @@ package Catmandu::Fix::timestamp;
 use Catmandu::Sane;
 use Time::HiRes;
 use Moo;
+use Catmandu::Fix::Has;
 
-our $VERSION = "0.0121";
+our $VERSION = "0.0122";
 
 with 'Catmandu::Fix::Base';
 
-has field => (
-  is => 'ro' , 
-  required => 1
-);
-
-around BUILDARGS => sub {
-  my($orig,$class,$field) = @_;
-  $orig->($class,field => $field);
-};
+has path => ( fix_arg => 1 );
 
 sub emit {
-  my($self,$fixer) = @_;
 
-  my $perl = "";  
+    my($self,$fixer) = @_;
 
-  my $path = $fixer->split_path($self->field());
-  my $key = pop @$path;
+    my $path = $fixer->split_path($self->path);
 
-  $perl .= $fixer->emit_walk_path($fixer->var,$path,sub{
-    my $var = shift;
-    $fixer->emit_get_key($var,$key, sub {
-      my $var = shift;
-      "${var} = Time::HiRes::time;";
+    $fixer->emit_create_path($fixer->var,$path,sub{
+
+        my $var = shift;
+        "${var} = Time::HiRes::time;";
+
     });
-  });
 
-  $perl;
 }
 
 =head1 NAME
